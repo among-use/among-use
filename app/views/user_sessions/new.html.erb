@@ -1,7 +1,7 @@
 <%= form_with model: @user, url: login_path, local: true do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit "ログイン" %>
+<%= f.label :email %>
+<%= f.text_field :email %>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<%= f.submit "ログイン", class: 'btn-primary' %>
 <% end %>
