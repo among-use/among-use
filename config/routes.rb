@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get 'events/create'
-  get 'events/edit'
-  get 'events/destroy'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :events,only: %i[show create destroy edit new update]
+
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
