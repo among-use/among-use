@@ -14,5 +14,5 @@ class User < ApplicationRecord
 
   # validates :reset_password_token, uniqueness: true, allow_nil: true
   # 必要であれば上記カラムを追加
-  enum role: { general: 0, admin: 0 }
+  enum role: { general: 0, admin: 1 }
 end
