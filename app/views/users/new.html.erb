@@ -2,7 +2,12 @@
   <div class="border border-white p-5">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <div class="text-center title mb-3">SignUp</div>
-        <%= button_to 'SignUp with GitHub', "#", method: :get %>
+        <div class="col text-center">
+          <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-light" do %>
+            <i class="fab fa-github mr-2"></i>
+              <span class="has-text-weight-medium">Sign in with Github</span>
+          <% end %>
+        </div>
       <%= form_with model: @user, local: true do |f| %>
         <%# プロフィールが出来たら上記に送信urlを設置 %>
         <%= render 'shared/error_messages', object: f.object %>
@@ -24,7 +29,7 @@
         </div>
         <div class="d-flex justify-content-between mt-3">
           <%= link_to 'Back', root_path, class: 'btn btn-dark btn-lg my-3 border-white' %>
-          <%= f.submit "Refisration", class: 'btn btn-dark btn-lg my-3 border-white' %>
+          <%= f.submit "Registration", class: 'btn btn-dark btn-lg my-3 border-white' %>
         </div>
       <% end %>
     </div>
