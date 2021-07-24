@@ -1,10 +1,11 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
   has_one  :profile, dependent: :destroy
-  has_many :authentications, dependent: :destroy
   has_many :events, dependent: :destroy
   has_many :participants, dependent: :destroy
 # has_many :participant_events, through: :participants, source: :event
+  has_many :authentications, dependent: :destroy
+  accepts_nested_attributes_for :authentications
 
   validates :name, presence: true
   validates :email, uniqueness: true, presence: true, format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i}
