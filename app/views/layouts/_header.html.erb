@@ -4,7 +4,7 @@
     <% if logged_in? %>
     <%= link_to "Crews", "#", class: 'p-2 text-white text-decoration-none' %>
     <%= link_to "Profile", "#", class: 'p-2 text-white text-decoration-none' %>
-    <%= link_to "Logout", "#", class: 'p-2 text-white text-decoration-none' %>
+    <%= link_to "Logout", logout_path, method: :delete, class: 'p-2 text-white text-decoration-none' %>
     <% else %>
     <%= link_to "Crews", "#", class: 'p-2 text-white text-decoration-none' %>
     <%= link_to "Login", login_path, class: 'p-2 text-white text-decoration-none' %>
