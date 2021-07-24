@@ -1,0 +1,81 @@
+// カレンダー
+
+// 月
+.fc-toolbar-title {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+// 今日の日付
+.fc-day-today{
+  background-color: #dc354526 !important;
+
+  .fc-daygrid-day-number {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .fc-daygrid-day-number:hover {
+    color: rgb(202, 32, 32);
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+// 未来の日付
+.fc-day-future{
+  .fc-daygrid-day-number {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .fc-daygrid-day-number:hover {
+    color: rgb(202, 32, 32);
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+// 過去の日付
+.fc-day-past{
+  .fc-daygrid-day-number {
+    color:#dddddd61;
+    text-decoration: none;
+    cursor: default;
+  }
+}
+
+// 他の月&未来の日付
+.fc-day-other.fc-day-future{
+  .fc-daygrid-day-number {
+    color:#dddddd61;
+    text-decoration: none;
+  }
+  .fc-daygrid-day-number:hover {
+    color:#dddddd61;
+    text-decoration: none;
+    cursor: default;
+  }
+}
+// 他の月&過去の日付
+.fc-day-other.fc-day-past{
+  .fc-daygrid-day-number {
+    color:#dddddd61;
+    text-decoration: none;
+    cursor: default;
+  }
+  .fc-daygrid-day-number:hover {
+    color:#dddddd61;
+    text-decoration: none;
+  }
+}
+
+// 曜日
+.fc-col-header-cell.fc-day {
+  background-color: #2c3e50;
+  .fc-col-header-cell-cushion {
+    color: white;
+    text-decoration: none;
+  }
+}
