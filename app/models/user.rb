@@ -3,7 +3,6 @@ class User < ApplicationRecord
   has_one  :profile, dependent: :destroy
   has_many :events, through: :participants
   has_many :participants
-  accepts_nested_attributes_for :participants
 # has_many :participant_events, through: :participants, source: :event
   has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications
