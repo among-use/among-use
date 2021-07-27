@@ -15,6 +15,15 @@ ActiveRecord::Schema.define(version: 2021_07_23_094114) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "authentications", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "provider", null: false
+    t.string "uid", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "message", null: false
     t.datetime "start_datetime", null: false
@@ -25,14 +34,6 @@ ActiveRecord::Schema.define(version: 2021_07_23_094114) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_events_on_user_id"
-    
-  create_table "authentications", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "provider", null: false
-    t.string "uid", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -57,6 +58,6 @@ ActiveRecord::Schema.define(version: 2021_07_23_094114) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "profiles", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "profiles", "users"
 end
