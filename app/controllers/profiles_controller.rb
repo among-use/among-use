@@ -1,11 +1,15 @@
 class ProfilesController < ApplicationController
+  def new
+    @profile = Profile.new
+  end
+
   def create
     @profile = Profile.new(profile_params)
 
     if @profile.save
-      flash[:success] = "さくせす"
+      redirect_to root_path
     else
-      flash[:danger] = "失敗"
+      render new
     end
   end
 
