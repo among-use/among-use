@@ -1,13 +1,25 @@
 <div class="container p-5 text-white">
   <div class="border border-white p-5">
-    <div class="col-6">
-    </div>
-    <div class="col-6">
-      <p class="text-danger">name</p>
-      <p class="text-danger">mattermost_times_url</p>
-        <%= @profile.mattermost_times_url %>
-      <p class="text-danger">message</p>
-        <%= @profile.message %><br>
+    <div class="row">
+      <div class="col-6 text-center">
+        <div class="image">
+          <%= image_tag "300x300.png" %>
+        </div>
+      </div>
+      <div class="col-6">
+        <p class="text-danger">name</p>
+          <p class="mb-5">
+            <%= current_user.name %>
+          </p>
+        <p class="text-danger">message</p>
+          <p class="mb-5">  
+            <%= @profile.message %>
+          </p>
+        <p class="text-danger">mattermost_times_url</p>
+          <p class="mb-5">  
+            <%= @profile.mattermost_times_url %>
+          </p>
+      </div>
     </div>
   </div>
 </div>
