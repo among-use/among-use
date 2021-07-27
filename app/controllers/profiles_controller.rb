@@ -27,7 +27,11 @@ class ProfilesController < ApplicationController
 
   def update
     @profile = Profile.find(params[:id])
-    @profile.update(profile_params)
+    if @profile.update(profile_params)
+      redirect_to profile_path(@profile)
+    else
+      render :edit
+    end
   end
 
   def destroy
