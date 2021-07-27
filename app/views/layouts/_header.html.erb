@@ -2,11 +2,11 @@
   <p class="h3 my-0 me-md-auto fw-normal"><%= link_to "@E", root_path, id: "logo", class: 'text-white text-decoration-none amongus-font' %></p>
   <nav class="my-2 my-md-0 me-md-3 ">
     <% if logged_in? %>
-    <%= link_to "Crews", "#", class: 'p-2 text-white text-decoration-none' %>
-    <%= link_to "Profile", "#", class: 'p-2 text-white text-decoration-none' %>
+    <%= link_to "Crews", profiles_path, class: 'p-2 text-white text-decoration-none' %>
+    <%= link_to "Profile", profile_path(current_user.profile.id), class: 'p-2 text-white text-decoration-none' %>
     <%= link_to "Logout", logout_path, method: :delete, class: 'p-2 text-white text-decoration-none' %>
     <% else %>
-    <%= link_to "Crews", "#", class: 'p-2 text-white text-decoration-none' %>
+    <%= link_to "Crews", profiles_path, class: 'p-2 text-white text-decoration-none' %>
     <%= link_to "Login", login_path, class: 'p-2 text-white text-decoration-none' %>
     <%= link_to "Sign up", new_user_path, class: 'p-2 text-white text-decoration-none' %>
     <% end %>

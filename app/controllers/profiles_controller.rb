@@ -1,13 +1,11 @@
 class ProfilesController < ApplicationController
-  def new
-    @profile = Profile.new
-  end
-
   def create
     @profile = Profile.new(profile_params)
 
     if @profile.save
+      flash[:success] = "さくせす"
     else
+      flash[:danger] = "失敗"
     end
   end
 
@@ -36,6 +34,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:message, :mattermost_times_url, :image)
+    params.require(:profile).permit(:message, :mattermost_times_url, :image).merge(user_id: current_user.id)
   end
 end
