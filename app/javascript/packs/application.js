@@ -7,6 +7,8 @@ import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+require('jquery')
+
 import "bootstrap" 
 import "../css/application"
 import '@fortawesome/fontawesome-free/js/all'

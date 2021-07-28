@@ -1,2 +1,10 @@
 <div id='calendar'></div>
+
+  <%= render 'shared/modal' %>
+
+  <div class="d-flex justify-content-center mt-1">
+    <button class="btn btn-dark btn-lg my-3 border-white js-open button-open">Event Create</button>
+  </div>
+
 <%= javascript_pack_tag 'calendar/event' %>
+<%= javascript_pack_tag 'modal/modal_window' %>
