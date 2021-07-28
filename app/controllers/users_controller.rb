@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   # skip_before_action :require_login, only: %i[new create]
+  before_action :user_set, only: %i[show edit update]
 
   def new
     @user = User.new
@@ -18,19 +19,14 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    user = User.find(params[:id])
-  end
+  def edit; end
 
   def update
-    user = User.find(params[:id])
-    @profile = user.build_profile(user_params)
+    @profile = @user.build_profile(user_params)
     if @profile.update
-      redirect_to user_path(user)
+      redirect_to user_path(@user)
     else
       render :edit
     end
@@ -40,5 +36,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def user_set
+    @user = User.find(params[:id])
   end
 end
