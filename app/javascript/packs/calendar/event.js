@@ -29,7 +29,7 @@ import googleCalendarApi from '@fullcalendar/google-calendar'
       allDayText: '終日',
       height: "auto",
 
-      // events: '/events.json',
+      events: '/events.json',
 
       dateClick: function(info){
           //日付をクリックしたときのイベント(詳しくは次回の記事へ)
@@ -44,3 +44,6 @@ import googleCalendarApi from '@fullcalendar/google-calendar'
   });
   //カレンダー表示
   calendar.render();
+
+
+
