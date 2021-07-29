@@ -1,0 +1,32 @@
+<div class="container p-5 text-white">
+  <div class="border border-white p-5">
+    <div class="top-title amongus-font text-center">
+      Profile
+    </div>
+    <div class="row">
+      <div class="col-6 text-center">
+        <div class="image">
+          <%= image_tag "300x300.png" %>
+        </div>
+        <%= link_to "Back", root_path, class: 'btn btn-dark btn-lg my-3 border-white' %>
+        <% if current_user.id == @user.profile.id %>
+          <%= link_to "Edit", edit_user_path(current_user.id), class: 'btn btn-dark btn-lg my-3 border-white' %>
+        <% end %>
+      </div>
+      <div class="col-6">
+        <p class="text-danger">name</p>
+          <p class="mb-5">
+            <%= @user.name %>
+          </p>
+        <p class="text-danger">message</p>
+          <p class="mb-5">  
+            <%= @user.profile.message %>
+          </p>
+        <p class="text-danger">mattermost_times_url</p>
+          <p class="mb-5">  
+            <%= @user.profile.mattermost_times_url %>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
