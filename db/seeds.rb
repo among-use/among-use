@@ -16,7 +16,7 @@ end
 
 (1..21).each do |i|
   User.find(i).create_profile!(
-    message: "message#{i}",
+    message: "message#{i}messagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessage",
     mattermost_times_url: "matamo_url#{i}"
   )
 end

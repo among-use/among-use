@@ -5,7 +5,9 @@
       <%= image_tag "300x300.png", class: "rounded-circle", size: "200x200" %>
     </div>
     <%= user.name %><br>
-    <%= user.profile.message %><br>
+    <div class="text-overflow">
+      <%= user.profile.message.truncate(20) %>
+    </div>
   <% end %>
   </div>
 </div>
