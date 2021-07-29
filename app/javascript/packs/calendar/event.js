@@ -45,5 +45,10 @@ import googleCalendarApi from '@fullcalendar/google-calendar'
   //カレンダー表示
   calendar.render();
 
-
+  //イベント作成のsubmitが押された0.1秒後に発火。カレンダーの再レンダリング
+  $(".clender-reload").on('click',function(){
+    setTimeout(function(){
+        calendar.refetchEvents();
+    },100);
+  });
 
