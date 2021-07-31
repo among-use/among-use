@@ -5,7 +5,7 @@ user = User.create!(
   password_confirmation: "password"
 )
 
-10.times do
+20.times do
   User.create!(
   name: Faker::Name.name,
   email: Faker::Internet.email,
@@ -14,9 +14,9 @@ user = User.create!(
   )
 end
 
-(1..11).each do |i|
+(1..21).each do |i|
   User.find(i).create_profile!(
-    message: "message#{i}",
+    message: "message#{i}messagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessage",
     mattermost_times_url: "matamo_url#{i}"
   )
 end
