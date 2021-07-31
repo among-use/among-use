@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # skip_before_action :require_login, only: %i[new create]
   before_action :user_set, only: %i[show edit update]
+  include Pagy::Backend
 
   def new
     @user = User.new
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @pagy, @users = pagy(User.all)
   end
 
   def show; end

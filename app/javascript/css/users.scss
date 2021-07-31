@@ -1,3 +1,28 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.page-link {
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+  border-radius: 8%;
+}
+
+.pagination>li>a:hover {
+  color: black;
+  background-color: white;
+  border-color: white;
+}
+
+.page-item.disabled .page-link {
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: black;
+  background-color: white;
+  border-color: transparent;
+}

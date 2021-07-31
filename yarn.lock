@@ -885,6 +885,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@fortawesome/fontawesome-free@^5.15.3":
+  version "5.15.3"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.3.tgz#c36ffa64a2a239bf948541a97b6ae8d729e09a9a"
+  integrity sha512-rFnSUN/QOtnOAgqFRooTA3H57JLDm0QEG/jPdk+tLQNL/eWd+Aok8g3qCI+Q1xuDPWpGW/i9JySpJVsq8Q0s9w==
+
 "@fullcalendar/common@~5.8.0":
   version "5.8.0"
   resolved "https://registry.yarnpkg.com/@fullcalendar/common/-/common-5.8.0.tgz#43e79e26e6347af83baaa603157aced67e23d549"
@@ -893,51 +898,46 @@
     tslib "^2.1.0"
 
 "@fullcalendar/core@^5.8.0":
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/core/-/core-5.8.0.tgz#86f034fc4a49c6a44886380aff01c6fcd7204966"
-  integrity sha512-55Zwy4fwcxBqHjfjhV5eae4qOh9fMlpjGcyy4Zt39zA1NlgUW0JxCGOyIu2K2jm2JZn+27/P8b06JXy57DmtKg==
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/core/-/core-5.9.0.tgz#3caa31c87187f64a62252d3dbd57be4b36e8e5f2"
+  integrity sha512-3+zSm8ykXqM2vEGYp4P/BEoR2TB0W9mN6zBGZ6SY9y0nC+Fc0+ZXJmFlYmrEYSdO4kmREnlxntkp1+o9mu8PIQ==
   dependencies:
-    "@fullcalendar/common" "~5.8.0"
+    "@fullcalendar/common" "~5.9.0"
     preact "^10.0.5"
     tslib "^2.1.0"
 
-"@fullcalendar/daygrid@^5.8.0", "@fullcalendar/daygrid@~5.8.0":
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-5.8.0.tgz#6a5991886ed3323366f72e7614ac8907cbd8d998"
-  integrity sha512-VrqwI97cewoUjFrKT67sS+f+JANI8xMx0g5bpM0XgV/KEEwvXpH5OmwkFSbXOnx1m4RXsvolQc6EBZpnJCf69Q==
+"@fullcalendar/daygrid@^5.8.0", "@fullcalendar/daygrid@~5.9.0":
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-5.9.0.tgz#d168d63ee850883a62c599bbae2695a32ef42f6f"
+  integrity sha512-yTYjTM+bjTWfq5uUnSMBH4j1il+b0IAAe+q2UcAeky4iggwn9pi+taUtETtlPTQCSBSWaF8TuEZ3+apB0RrjyQ==
   dependencies:
-    "@fullcalendar/common" "~5.8.0"
+    "@fullcalendar/common" "~5.9.0"
     tslib "^2.1.0"
 
 "@fullcalendar/google-calendar@^5.8.0":
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/google-calendar/-/google-calendar-5.8.0.tgz#65d33eff1fd8182e820bf4f0bc297c87b949050d"
-  integrity sha512-kJ6UfLQG9wznCMUkM2OxtEwQriq5PG4J77iJ2R85p52lRqC2dl9q5wVDaAdFSyPHWcbqtPm1flsOpCvri0XH0Q==
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/google-calendar/-/google-calendar-5.9.0.tgz#8eb4b83889afa53cdfecbf704cd3f8585f3e0252"
+  integrity sha512-Q31TWfH39eUeFJBG1Susyz28H3blDAfFqKfaUVoGXtHgghYcTQccuaLsHrYDzqM3N+7guu3B8A8/oha/MLGxGQ==
   dependencies:
-    "@fullcalendar/common" "~5.8.0"
+    "@fullcalendar/common" "~5.9.0"
     tslib "^2.1.0"
 
 "@fullcalendar/interaction@^5.8.0":
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/interaction/-/interaction-5.8.0.tgz#1661682f4df7b076b36fedf2fc9b33a03f04bf07"
-  integrity sha512-ocOCS5g1AT06uR3OeKpN2WKJO4BLmnUZn/v2H/iPllbC7MwYBSy/obC4CoQqnK93FyJXUOFH1KfLwTK013C1+w==
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/interaction/-/interaction-5.9.0.tgz#7211f89074cc89b9234a9333fc8ec346bd4ff3f3"
+  integrity sha512-bBvcY3Mh2z4rP5AqB8dL76SljPEVCVawNmdQlcKShedhxvkkMR1zMcJ3sgabLBvXqooC9f+PbmEb5LlSGEse3A==
   dependencies:
-    "@fullcalendar/common" "~5.8.0"
+    "@fullcalendar/common" "~5.9.0"
     tslib "^2.1.0"
 
 "@fullcalendar/timegrid@^5.8.0":
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/timegrid/-/timegrid-5.8.0.tgz#4f1f8e1aee52f3b493701b3c9e3b59510be53c24"
-  integrity sha512-N24TkOuRkxMDn02E8LPj4fKKgAxQxF6k/PONIwMVHnOih2v3SeiKOOemmrk6uoTwOS7R2fVblOJQGFWXobYu3g==
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/timegrid/-/timegrid-5.9.0.tgz#06b8367cb98648c5be23a5b4ba42a124747f5744"
+  integrity sha512-X9JLepHz6hSuiziVkIlgBkx/W/5E4nIqJ6i0LISk3zPFH/Arn0QjQU345ISys8OTwezPUgJvLGrl4Yy4/gRULw==
   dependencies:
-    "@fullcalendar/common" "~5.8.0"
-    "@fullcalendar/daygrid" "~5.8.0"
+    "@fullcalendar/common" "~5.9.0"
+    "@fullcalendar/daygrid" "~5.9.0"
     tslib "^2.1.0"
-
-"@fortawesome/fontawesome-free@^5.15.3":
-  version "5.15.3"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.3.tgz#c36ffa64a2a239bf948541a97b6ae8d729e09a9a"
-  integrity sha512-rFnSUN/QOtnOAgqFRooTA3H57JLDm0QEG/jPdk+tLQNL/eWd+Aok8g3qCI+Q1xuDPWpGW/i9JySpJVsq8Q0s9w==
 
 "@npmcli/move-file@^1.0.1":
   version "1.1.2"
@@ -3796,6 +3796,11 @@ jest-worker@^26.5.0:
     "@types/node" "*"
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
+
+jquery@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
+  integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
 
 js-tokens@^4.0.0:
   version "4.0.0"
