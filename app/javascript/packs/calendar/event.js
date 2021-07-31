@@ -19,7 +19,7 @@ import googleCalendarApi from '@fullcalendar/google-calendar'
       headerToolbar: {
         start: '',
         center: 'title',
-        end: 'today prev,next' 
+        end: 'today prev,next'
       },
       expandRows: true,
       stickyHeaderDates: true,
@@ -29,6 +29,8 @@ import googleCalendarApi from '@fullcalendar/google-calendar'
       allDayText: '終日',
       height: "auto",
 
+      events: '/events.json',
+
       dateClick: function(info){
           //日付をクリックしたときのイベント(詳しくは次回の記事へ)
       },
@@ -37,8 +39,16 @@ import googleCalendarApi from '@fullcalendar/google-calendar'
       },
       eventClassNames: function(arg){
           //表示されたイベントにclassをcss用に追加する(詳しくは次回の記事へ)
-      }
+      },
 
   });
   //カレンダー表示
   calendar.render();
+
+  //イベント作成のsubmitが押された0.1秒後に発火。カレンダーの再レンダリング
+  $(".clender-reload").on('click',function(){
+    setTimeout(function(){
+        calendar.refetchEvents();
+    },100);
+  });
+
