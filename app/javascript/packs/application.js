@@ -11,5 +11,9 @@ import "bootstrap"
 import "../css/application"
 import '@fortawesome/fontawesome-free/js/all'
 require('jquery')
+
+const images = require.context("../images", true);
+const imagePath = name => images(name, true);
+
 Rails.start()
 ActiveStorage.start()
