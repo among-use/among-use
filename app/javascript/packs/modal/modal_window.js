@@ -4,6 +4,6 @@ $(function () {
     });
 
     $('.js-close').click(function () {
-        $('#overlay, .modal-window, .modal-window2').fadeOut();
+        $('#overlay, .modal-window, .modal-window1').fadeOut();
     });
 });
