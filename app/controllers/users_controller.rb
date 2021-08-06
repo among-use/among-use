@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # skip_before_action :require_login, only: %i[new create]
   before_action :user_set, only: %i[show edit update]
+  include ActiveModel::Model
   include Pagy::Backend
 
   def new
@@ -25,8 +26,9 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    @profile = @user.build_profile(user_params)
-    if @profile.update
+    @user_form = UserForm.new(update_params)
+    if @user_form.valid?
+      @user_form.update
       redirect_to user_path(@user)
     else
       render :edit
@@ -42,4 +44,9 @@ class UsersController < ApplicationController
   def user_set
     @user = User.find(params[:id])
   end
+
+  def update_params
+    params.permit(:name, :message, :mattermost_times_url, :id)
+  end
 end
+
