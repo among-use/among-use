@@ -23,14 +23,19 @@ class UsersController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    @user_form = UserForm.new
+  end
 
   def update
+    # binding.pry
     @user_form = UserForm.new(update_params)
     if @user_form.valid?
+
       @user_form.update
-      redirect_to user_path(@user)
+      redirect_to user_path(@user), success: '更新しました'
     else
+      flash.now[:danger] = '失敗しました'
       render :edit
     end
   end
@@ -38,7 +43,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
   def user_set
@@ -46,7 +51,7 @@ class UsersController < ApplicationController
   end
 
   def update_params
-    params.permit(:name, :message, :mattermost_times_url, :id)
+    params.require(:user_form).permit(:name, :message, :mattermost_times_url, :id)
   end
 end
 

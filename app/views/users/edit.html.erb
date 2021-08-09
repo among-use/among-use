@@ -12,6 +12,8 @@
       </div>
       <div class="col-6">
         <%= form_with model: @user_form, url: user_path(current_user.id), method: :put, local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+          <%= f.hidden_field :id, class: 'form-label', value: current_user.id %>
           <%= f.label :name, class: 'form-label' %>
           <%= f.text_field :name, class: 'form-control mb-5', value: current_user.name %>
 

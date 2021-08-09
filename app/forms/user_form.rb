@@ -10,9 +10,16 @@ class UserForm
   end
 
   def update
-    user = User.find(id)
-    user.update(name: name)
-    profile = Profile.find_by(user_id: user.id)
-    profile.update(message: message, mattermost_times_url: mattermost_times_url)
+    # binding.pry
+    return false if invalid?
+
+    ActiveRecord::Base.transaction do
+      user = User.find(id)
+      user.update!(name: name)
+      profile = Profile.find_by(user_id: user.id)
+      profile.update!(message: message, mattermost_times_url: mattermost_times_url)
+    end
+
+    true
   end
 end
