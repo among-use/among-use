@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザ
+      profile: プロフィール
+      event: イベント
+    attributes:
+      user:
+        name: ユーザー名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
+        # remote_avatar_url:
+      profile:
+        message: メッセージ
+        mattermost_times_url: マタモのtimesのURL
+        image: 画像
+      event:
+        message: メッセージ
+        rule: ルール
+        max_crews: 参加クルー数
+        start_datetime: 開始時間
+        finish_datetime: 終了時間
