@@ -1,6 +1,7 @@
 const swiper = new Swiper(".swiper-container", {
   direction: "vertical",
   loop: true,
+  speed: 4000,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
