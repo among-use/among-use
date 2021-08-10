@@ -2,7 +2,12 @@
   <div class="container py-5 text-center">
   <%= link_to user_path(user), class: "text-light text-decoration-none" do %>
     <div class="image">
-      <%= image_pack_tag "300x300.png", class: "rounded-circle", size: "200x200" %>
+      <!--   <%= image_pack_tag "300x300.png", class: "rounded-circle", size: "200x200" %>  -->
+      <% if user.avatar.attached? %>
+        <%= image_tag user.avatar, size: "100x150" %>
+      <% else %>
+        <%= image_pack_tag "300x300.png", class: "rounded-circle", size: "200x200" %>
+      <% end %>      
     </div>
     <%= user.name %><br>
     <div class="text-overflow">
