@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  before_create :default_image
+
   authenticates_with_sorcery!
   has_one  :profile, dependent: :destroy
   has_many :events, through: :participants
@@ -16,4 +18,20 @@ class User < ApplicationRecord
   # validates :reset_password_token, uniqueness: true, allow_nil: true
   # 必要であれば上記カラムを追加
   enum role: { general: 0, admin: 1 }
+
+  has_one_attached :avatar
+
+  def default_image
+    if !self.avatar.attached?
+      array = ['black_plant', 'white_plant','yellow_plant','red_plant','purple_plant','pink_plant','orange_plant','lightgreen_plant','green_plant','sian_plant','brown_plant','blue_plant',]
+      file_name = array.sample
+      # self.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'avatar.png')), filename: 'avatar.png', content_type: 'image/png')
+      self.avatar.attach(io: File.open(Rails.root.join('app', 'javascript', 'images', "#{file_name}.png")), filename: 'avatar.png', content_type: 'image/jpg')
+    end
+  end
+
+  def user_profile
+    @user_profile = User.new
+    @user_profile.build_profile
+  end
 end

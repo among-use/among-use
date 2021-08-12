@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    # debugger
     @user = User.new(user_params)
     if @user.save
       redirect_to login_path # 後でリダイレクト先を変更
@@ -21,7 +22,9 @@ class UsersController < ApplicationController
     @pagy, @users = pagy(User.all)
   end
 
-  def show; end
+  def show
+# debugger
+  end
 
   def edit
     @user_form = UserForm.new

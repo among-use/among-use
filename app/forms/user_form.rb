@@ -6,7 +6,7 @@ class UserForm
   with_options presence: true do
     validates :name
     validates :message, length: { maximum: 100 }
-    validates :mattermost_times_url
+    # validates :mattermost_times_url
   end
 
   def update
@@ -17,7 +17,14 @@ class UserForm
       user = User.find(id)
       user.update!(name: name)
       profile = Profile.find_by(user_id: user.id)
+      if profile.present?
       profile.update!(message: message, mattermost_times_url: mattermost_times_url)
+      else
+        # debugger
+      # profile = user.profile.new
+      profile = user.build_profile
+      profile.save(message: message, mattermost_times_url: mattermost_times_url)
+      end
     end
 
     true
