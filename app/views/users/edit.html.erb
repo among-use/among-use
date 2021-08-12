@@ -25,10 +25,10 @@
             <%= f.text_area :message, class: 'form-control mb-5', placeholder: 'メッセージを一言。' %>
           <% end %>
           <%= f.label :mattermost_times_url, class: 'form-label' %>
-          <% if current_user.profile %>
-            <%= f.text_field :mattermost_times_url, class: 'form-control mb-5', value: "https://chat.runteq.jp/runteq/channel" %>
+          <% if current_user.profile && current_user.profile.mattermost_times_url.present? %>
+            <%= f.text_field :mattermost_times_url, class: 'form-control mb-5',  value: current_user.profile.mattermost_times_url %>
           <% else %>
-            <%= f.text_field :mattermost_times_url, class: 'form-control mb-5' %>
+            <%= f.text_field :mattermost_times_url, class: 'form-control mb-5', placeholder: "https://chat.runteq.jp/runteq/channel" %>
           <% end %>
           <%= f.submit "Registration", class: 'btn btn-dark btn-lg my-3 border-white' %>
         <% end %>

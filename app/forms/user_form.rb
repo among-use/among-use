@@ -4,14 +4,14 @@ class UserForm
   attr_accessor :name, :message, :mattermost_times_url, :id
 
   with_options presence: true do
-    validates :name
+    # validates :name
     validates :message, length: { maximum: 100 }
     # validates :mattermost_times_url
   end
 
   def update
     # binding.pry
-    return false if invalid?
+    # return false if invalid?
 
     ActiveRecord::Base.transaction do
       user = User.find(id)
@@ -21,12 +21,13 @@ class UserForm
       profile.update!(message: message, mattermost_times_url: mattermost_times_url)
       else
         # debugger
-      # profile = user.profile.new
-      profile = user.build_profile
-      profile.save(message: message, mattermost_times_url: mattermost_times_url)
+      profile = user.build_profile(message: message, mattermost_times_url: mattermost_times_url)
+      profile.save!
       end
     end
 
     true
+  rescue StandardError
+    false
   end
 end
