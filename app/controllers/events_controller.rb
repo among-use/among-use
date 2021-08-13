@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event
         # format.html { redirect_to root_path }
-        format.js
+        format.js { @event }
       else
         redirect_back fallback_location: events_path
       end

@@ -1,0 +1,29 @@
+<div class="modal-window1 border border-white p-3 text-white">
+  <div class="d-flex justify-content-end mt-1">
+    <button class="btn btn-dark btn-lg border-white d-flex justify-content-end js-close button-close"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="text-center title mb-2">Event</div>
+  <div class="modal-font-size mt-1">
+    <div class="text-center inline_block_list">
+      <ul class="start-list">
+        <li class="start-content">START DATE</li>
+        <li class="start-content"><%= event.start_datetime %></li>
+      </ul>
+      <ul class="end-list">
+        <li class="end-content">END DATE</li>
+        <li class="end-content"><%= event.finish_datetime %></li>
+      </ul>
+      <ul class="crew-list">
+        <li class="crew-content">MAX CREWS</li>
+        <li class="crew-content"><%= event.max_crews %></li>
+      </ul>
+      <ul class="rule-list">
+        <li class="rule-content">RULE</li>
+        <li class="rule-content"><%= event.rule %></li>
+      </ul>
+      <ul class="message-list">
+        <li class="message-content">MESSAGE</li>
+        <li class="message-content"><%= event.message %></li>
+      </ul>
+  </div>
+</div>
