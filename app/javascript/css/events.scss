@@ -86,10 +86,25 @@
   text-decoration: none;
   border: 2px solid;
   border-radius: 6px;
-  color: white;
   text-decoration: none;
   padding: 6px 45px;
 }
 .create-event-button-text:hover{
-  color: red;
+  color: rgb(155, 155, 155);
+}
+
+.fc-daygrid-event:hover {
+  cursor: pointer;
+}
+
+.delete-event-button-text{
+  color: rgb(243, 19, 19);
+  text-decoration: none;
+  border: 2px solid;
+  border-radius: 6px;
+  text-decoration: none;
+  padding: 6px 45px;
+}
+.delete-event-button-text:hover{
+  color: rgb(151, 5, 5);
 }
