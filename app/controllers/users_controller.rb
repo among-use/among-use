@@ -31,7 +31,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    # binding.pry
     @user_form = UserForm.new(update_params)
     if @user_form.valid?
 
@@ -54,7 +53,7 @@ class UsersController < ApplicationController
   end
 
   def update_params
-    params.require(:user_form).permit(:name, :message, :mattermost_times_url, :id)
+    params.require(:user_form).permit(:name, :message, :mattermost_times_url, :id, :image)
   end
 end
 

@@ -3,16 +3,23 @@
     <div class="top-title amongus-font text-center">
       Profile
     </div>
-    <div class="row">
-      <div class="col-6 text-center">
-        <div class="image">
-          <%= image_pack_tag "300x300.png" %>
+    <%= form_with model: @user_form, url: user_path(current_user.id), method: :put, local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="row">
+        <div class="col-6 text-center">
+          <div class="image">
+            <% if current_user.avatar.attached? %>
+              <%= image_tag current_user.avatar, id: "preview", size: "200x250" %>
+            <% else %>
+              <%= image_tag  "300x300.png", alt: "preview", size: "200x250" %>
+            <% end %>
+            <div>
+              <%= f.file_field :image, class: 'form-control mt-5' %>
+            </div>
+          </div>
+          <%= link_to "Back", user_path(current_user), class: 'btn btn-dark btn-lg my-3 border-white' %>
         </div>
-        <%= link_to "Back", user_path(current_user), class: 'btn btn-dark btn-lg my-3 border-white' %>
-      </div>
-      <div class="col-6">
-        <%= form_with model: @user_form, url: user_path(current_user.id), method: :put, local: true do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
+        <div class="col-6">
           <%= f.hidden_field :id, class: 'form-label', value: current_user.id %>
 
           <%= f.label :name, class: 'form-label' %>
@@ -31,8 +38,8 @@
             <%= f.text_field :mattermost_times_url, class: 'form-control mb-5', placeholder: "https://chat.runteq.jp/runteq/channel" %>
           <% end %>
           <%= f.submit "Registration", class: 'btn btn-dark btn-lg my-3 border-white' %>
-        <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
