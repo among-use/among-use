@@ -4,7 +4,7 @@ $(function () {
     });
 
     $('.js-close').click(function () {
-        $('#overlay, .modal-window, .modal-window2').fadeOut(function(){
+        $('#overlay, .modal-window, .modal-window1').fadeOut(function(){
             $('[name="rule"] option[value=""]').prop('selected',true);
             $("input[type=number], number_field").val("");
             $("input[type=datetime-local], datetime_field").val("");

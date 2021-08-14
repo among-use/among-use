@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   root 'top#index'
 
-  resources :users  
-  resources :events,only: %i[index create destroy edit new update]
-  resources :participants,  only: [:index, :create, :destroy]
+  resources :users
+  resources :events,only: %i[index create destroy edit new update show]
+  resources :participants,only: [:index, :create, :destroy]
   resources :profiles, only: %i[new]
 
   get 'login', to: 'user_sessions#new'
