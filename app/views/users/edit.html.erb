@@ -11,7 +11,7 @@
             <% if current_user.avatar.attached? %>
               <%= image_tag current_user.avatar, id: "preview", size: "200x250" %>
             <% else %>
-              <%= image_pack_tag "300x300.png", alt: "preview", size: "200x250" %>
+              <%= image_pack_tag  "300x300.png", alt: "preview", size: "200x250" %>
             <% end %>
             <div>
               <%= f.file_field :image, class: 'form-control mt-5' %>
