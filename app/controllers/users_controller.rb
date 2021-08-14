@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # skip_before_action :require_login, only: %i[new create]
   before_action :user_set, only: %i[show edit update]
+  include ActiveModel::Model
   include Pagy::Backend
 
   def new
@@ -8,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    # debugger
     @user = User.new(user_params)
     if @user.save
       redirect_to login_path # 後でリダイレクト先を変更
@@ -20,15 +22,23 @@ class UsersController < ApplicationController
     @pagy, @users = pagy(User.all)
   end
 
-  def show; end
+  def show
+# debugger
+  end
 
-  def edit; end
+  def edit
+    @user_form = UserForm.new
+  end
 
   def update
-    @profile = @user.build_profile(user_params)
-    if @profile.update
-      redirect_to user_path(@user)
+    # binding.pry
+    @user_form = UserForm.new(update_params)
+    if @user_form.valid?
+
+      @user_form.update
+      redirect_to user_path(@user), success: '更新しました'
     else
+      flash.now[:danger] = '失敗しました'
       render :edit
     end
   end
@@ -36,10 +46,15 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
   def user_set
     @user = User.find(params[:id])
   end
+
+  def update_params
+    params.require(:user_form).permit(:name, :message, :mattermost_times_url, :id)
+  end
 end
+
