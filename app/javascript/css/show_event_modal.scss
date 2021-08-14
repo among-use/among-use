@@ -57,3 +57,17 @@
     vertical-align:middle; /* 縦位置中央揃え */
     letter-spacing:0em;
 }
+
+// Editボタン
+.Edit-event-button-text{
+    color: white;
+    text-decoration: none;
+    border: 2px solid;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    padding: 6px 45px;
+}
+.Edit-event-button-text:hover{
+color: red;
+}

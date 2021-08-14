@@ -1,3 +1,4 @@
+console.log('カレンダーの読み込み')
 //インストールしたファイルたちを呼び出します。
 import { Calendar} from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
@@ -67,8 +68,23 @@ calendar.render();
 
 //イベント作成のsubmitが押された0.1秒後に発火。カレンダーの再レンダリング
 $(".clender-reload").on('click',function(){
+  console.log('作成後再レンダリング1')
   setTimeout(function(){
-      calendar.refetchEvents();
-  },100);
+    console.log('作成後再レンダリング2')
+    calendar.refetchEvents();
+  },500);
+
+  // $("#calendar").fullCalendar('removeEvents');
+  // $("#calendar").fullCalendar('refetchEvents');
 });
+
+
+// $(".clender-reload-edit").on('click',function(){
+//   setTimeout(function(){
+//     console.log('更新後再レンダリング')
+//     calendar.refetchEvents();
+//   },2000);
+// });
+
+
 

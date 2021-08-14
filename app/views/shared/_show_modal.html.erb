@@ -3,7 +3,7 @@
     <button class="btn btn-dark btn-lg border-white d-flex justify-content-end js-close button-close"><i class="fas fa-times"></i></button>
   </div>
   <div class="text-center title mb-2">Event</div>
-  <div class="modal-font-size mt-1">
+  <div class="modal-font-size mt-1" id='event-content'>
     <div class="text-center inline_block_list">
       <ul class="start-list">
         <li class="start-content">START DATE</li>
@@ -26,4 +26,10 @@
         <li class="message-content"><%= event.message %></li>
       </ul>
   </div>
+  <div class="row">
+    <div class='col-6 mt-4 text-center'> <%= link_to 'Edit',edit_event_path,class:'create-event-button-text',remote: true %> </div>
+    <div class='col-6 mt-4 text-center'> <%= link_to 'Delete',event_path,method: :delete,class:'delete-event-button-text clender-reload',remote: true %> </div>
+  </div>
 </div>
+
+<%= javascript_pack_tag 'calendar/event' %>
