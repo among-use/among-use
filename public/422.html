@@ -4,64 +4,130 @@
   <title>The change you wanted was rejected (422)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
+html  {
+  overflow: hidden;
+  background: #000;
+  perspective: 300px
+}
+
+html,head,
+  head:before,head:after,body:before,body:after,style:before,
+  style:after {
+
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display:block;
+    margin:0;
+    padding:0
+  }
+    style {
+      visibility:hidden
+    }
+    html:before {
+      position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate3d(-50%,-50%,0);
+    color:#888;
+    font-family: Menlo,"Courier New";
+    font-size:200%;
+    text-align:center;
+    white-space:pre;
+    content:"422\0a This page can not be displayed\0a Definitely an Imposter.";
+    z-index:1;
+    -webkit-animation:6s text ease-out;
+    animation:6s text ease-out
+  }
+    html::first-line {
+      color:#ddd;
+    font-family:Arial;
+    font-size:1200%;
+    line-height:1;
+    font-weight:bold;
+    text-shadow:0 0 5px #ddd
   }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    head,body,style {
+      transform-style:preserve-3d
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    style:before,style:after,head:before,
+    head:after,body:before,body:after {
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0BAMAAAA5+MK5AAAAJFBMVEX////////////////////////////////////////////////Vd7HLAAAADHRSTlMARFVmd4iZqrvM3e7VNOnbAAADp0lEQVR4Xu3dwZGbMBQG4BcTg3EuKYESKMElUIJLoARKoASXmmtmsoeNLUBC33fb0zKDEZLe+1HUB4BHfGiNkl2jIGPsgyEyBjR//XGJzMDFdOYT0HxjHtzHF+jrWYECsBiVP3MzK/ibHVGaINv57hqlm+MkeHqITQSK4LnxDHH1IubdmZoxSiETPxUdYKORK43WTB6wLqvsJWCatSSqg/XHXiB08QFAVwFLwuLeK3aC8uWw+z6PDSnw6kfXLnMub8GLTQxFbZAKKpRcwGjC7atM+2Z0/Kw8QBjvX1Ga/v8vnZ9nutpr5GqOe7lFA1aXQJIhps0pA0ub+4+JNcF6vPm6JIA9yB/19Rn3Slffd8/qXvQGiK/g/rOWUqJpEn0RYNqwnvd8dzlxsW9YBDnsPucis1eYzospsEWu7PkuoT2gO2V+YClnqNLpzqyvaBeAANi82fBlZTPFAeiFquuYCGJSTFfbYhlFWvDgAcBNV4fgP3gGkYE58lxE4H72uMo10rmXWUxGuwlCBgC3AqJxT2kWyDTVbk4CgPMq5DuxJ4il3j0AZ1w0Jc4Ox12vVECVZ7Ev5uXfIL3i43mxBJiCpju+wWYgfZwSXCutFtgpX+3ub8xoMaR4pw4nGaqgVQ1TQQCBZeMzDmBSJiweo0zRe+CVtJoLgPIagAW9kCN0zmevDlPKw8E8IzwSHEUHYMBg2LG5jKsLqaX51E+XJo9XMc/NbzP4Ro3vXtBVl5B/1NVvPtjmKLXUCiBhiJQ3Tif4Xf5eKYLbYEvpVcW2nlx3e/Deye2wTUD6Cr6NKoOulmd93ajAQyZP3WWTiu8aIJVMmoX4sPX/V8r3scQ29VWJPqyG63dBl7jjjN5mGDK6Ok2EDlCTUakQLBGFO3TZz6/tJvbo1WexbvcMUFj3C24r3ki3wGkebFMCYyo3+NuWVqXDyItM1V22LK3nvvN5QA8IGrNoRTbLZODFeD36GBWYvhRTz5iiVgqknsl5gy5kYVMdkrhPNOqO5FMOoznqBsKYbNUK057tINAXWRGjSz5aNF7UZ6NCACDTrgHQvMhaEZzNAIC+wca9PHa6C8L+oOI9BwAWjmCSBNL+INoDIHx7lj7HuZJpI+o+L3EVchrD7IwCQ8pDQkQ6cM6QohA380I/ouxekyAqTRflwBwMxzsNIn9VHAggCyqXgscFLJTX2ADgJIrVV7EUpE3obK3ji4agAOa0ArSzOTsTEozdj4xfDYMEWsb1VYA/KFNOcBXJpxsAAAAASUVORK5CYII=);
+    content:"";
+    animation:12s warp linear infinite;
+    visibility:visible;
+    background-position:50% 50%;
   }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .crew {
+    size: 15px;
+    background-image: url(data:image/png;base64,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);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    padding: 40% 100%;
+    animation: 20s slidein 4s infinite running;
+    opacity: 0.8;
+    transition : 10s ease-in-out;
+    }
+    head:before {
+      background-position:-190px 80px
+    }
+    head:after {
+      background-position:90px -180px;
+    animation-delay:-2s
   }
-  </style>
+    body:before {
+      background-position:210px 180px;
+    animation-delay:-4s
+  }
+    body:after {
+      background-position:-120px 40px;
+    animation-delay:-6s
+  }
+    style:before {
+      background-position:130px 140px;
+    animation-delay:-8s
+  }
+    style:after {
+      background-position:-150px -90px;
+    animation-delay:-10s
+  }
+    @keyframes warp {
+      from {
+      transform:rotate(-60deg) translateZ(-300px)
+    }
+    to {
+      transform:rotate(60deg) translateZ(300px)
+    }
+  }
+    @keyframes text {
+      from {
+      opacity:0;
+    transform:translate3d(-50%,-50%,-1200px)
+    }
+    to {
+      opacity:1;
+    transform:translate3d(-50%,-50%,0)
+    }
+  }
+  @keyframes slidein {
+    from {
+    transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+    </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/422.html -->
-  <div class="dialog">
-    <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+  <div class="crew">
   </div>
 </body>
 </html>
