@@ -23,10 +23,15 @@ class User < ApplicationRecord
 
   def default_image
     if !self.avatar.attached?
-      array = ['black_plant', 'white_plant','yellow_plant','red_plant','purple_plant','pink_plant','orange_plant','lightgreen_plant','geren_plant','sian_plant','brown_plant','blue_plant',]
+      array = ['black_plant', 'white_plant','yellow_plant','red_plant','purple_plant','pink_plant','orange_plant','lightgreen_plant','green_plant','sian_plant','brown_plant','blue_plant',]
       file_name = array.sample
       # self.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'avatar.png')), filename: 'avatar.png', content_type: 'image/png')
       self.avatar.attach(io: File.open(Rails.root.join('app', 'javascript', 'images', "#{file_name}.png")), filename: 'avatar.png', content_type: 'image/jpg')
     end
+  end
+
+  def user_profile
+    @user_profile = User.new
+    @user_profile.build_profile
   end
 end
