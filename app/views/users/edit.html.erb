@@ -11,15 +11,25 @@
         <%= link_to "Back", user_path(current_user), class: 'btn btn-dark btn-lg my-3 border-white' %>
       </div>
       <div class="col-6">
-        <%= form_with model: @user, url: user_path(current_user.id), method: :put, local: true do |f| %>
+        <%= form_with model: @user_form, url: user_path(current_user.id), method: :put, local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+          <%= f.hidden_field :id, class: 'form-label', value: current_user.id %>
+
           <%= f.label :name, class: 'form-label' %>
           <%= f.text_field :name, class: 'form-control mb-5', value: current_user.name %>
 
           <%= f.label :message, class: 'form-label' %>
-          <%= f.text_area :message, class: 'form-control mb-5', value: current_user.profile.message %>
+          <% if current_user.profile %>
+            <%= f.text_area :message, class: 'form-control mb-5', value: current_user.profile.message %>
+          <% else %>
+            <%= f.text_area :message, class: 'form-control mb-5', placeholder: 'メッセージを一言。' %>
+          <% end %>
           <%= f.label :mattermost_times_url, class: 'form-label' %>
-          <%= f.text_field :mattermost_times_url, class: 'form-control mb-5', value: "https://chat.runteq.jp/runteq/channel" %>
-
+          <% if current_user.profile && current_user.profile.mattermost_times_url.present? %>
+            <%= f.text_field :mattermost_times_url, class: 'form-control mb-5',  value: current_user.profile.mattermost_times_url %>
+          <% else %>
+            <%= f.text_field :mattermost_times_url, class: 'form-control mb-5', placeholder: "https://chat.runteq.jp/runteq/channel" %>
+          <% end %>
           <%= f.submit "Registration", class: 'btn btn-dark btn-lg my-3 border-white' %>
         <% end %>
       </div>
