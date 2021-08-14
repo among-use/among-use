@@ -1,6 +1,6 @@
 <div id='calendar'></div>
 
-<%= render 'shared/modal' %>
+<%= render 'shared/modal', event: @event %>
 
 <%= javascript_pack_tag 'calendar/event' %>
 <%= javascript_pack_tag 'modal/modal_window' %>

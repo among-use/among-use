@@ -18,6 +18,6 @@ ja:
       event:
         message: メッセージ
         rule: ルール
-        max_crews: 参加クルー数
+        max_crews: 最大クルー数
         start_datetime: 開始時間
         finish_datetime: 終了時間

@@ -5,7 +5,7 @@
       <button class="btn btn-dark btn-lg border-white d-flex justify-content-end js-close button-close"><i class="fas fa-times"></i></button>
     </div>
     <div class="text-center title mb-1">EventCreate</div>
-    <%= form_with url: events_path, local: false do |f| %>
+    <%= form_with model: event, url: events_path, local: false do |f| %>
       <div class="form-group">
         <%= f.label :rule, class: 'form-label' %>
         <%= f.select :rule, options_for_select(Event.rules), {prompt: "選択してください"}, class: "form-control" %>
