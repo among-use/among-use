@@ -1,0 +1,61 @@
+<div class="modal-window1 border border-white p-3 text-white p-4">
+  <div class="d-flex justify-content-end mt-1">
+    <button class="btn btn-dark btn-lg border-white d-flex justify-content-end js-close button-close"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="modal-font-size mt-1">
+    <div class="text-center inline_block_list mb-4">
+      <ul class="start-list">
+        <li class="start-content">START DATE</li>
+        <li class="start-content"><%= event.start_datetime %></li>
+      </ul>
+      <ul class="end-list">
+        <li class="end-content">END DATE</li>
+        <li class="end-content"><%= event.finish_datetime %></li>
+      </ul>
+      <ul class="crew-list">
+        <li class="crew-content">MAX CREWS</li>
+        <li class="crew-content"><%= event.max_crews %></li>
+      </ul>
+      <ul class="rule-list">
+        <li class="rule-content">RULE</li>
+        <li class="rule-content"><%= event.rule %></li>
+      </ul>
+      <ul class="message-list">
+        <li class="message-content">MESSAGE</li>
+        <li class="message-content"><%= event.message %></li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="">
+        <div class="row col-10 offset-1">
+          <% event.participants.each do |participant| %>
+            <div class="col-2">
+              <div class="event_user_avater">
+                <%= image_tag participant.user.avatar, size: "50x75" %>
+                <div class="text-center event_user_avater_name">
+                  <%= participant.user.name %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <% if current_user == event.user %>
+        <div class="row">
+          <div class='col-6 mt-4 text-center'> <%= link_to 'Edit',edit_event_path,class:'create-event-button-text',remote: true %> </div>
+          <div class='col-6 mt-4 text-center'> <%= link_to 'Delete','#',class:'delete-event-button-text',remote: true %> </div>
+        </div>
+      <% else %>
+        <% if current_user.participant?(event) %>
+          <%= link_to "Leave", participant_path(event.id), remote: true, method: :delete, class: "mt-2 btn btn-dark btn-lg my-3 border-white clender-reload delete-event-button-text" %>
+        <% else %>
+          <%= link_to "Join", participants_path(event.id), remote: true, method: :post, class: "mt-2 btn btn-dark btn-lg my-3 border-white clender-reload create-event-button-text" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'modal/modal_window' %>

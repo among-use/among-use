@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event
         # format.html { redirect_to root_path }
-        format.js
+        format.js { @event }
       else
         redirect_back fallback_location: events_path
       end
@@ -19,6 +19,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     if @event.save
+      current_user.participant(@event)
       respond_to do |format|
         format.html { redirect_to root_path } 
         format.js
@@ -26,7 +27,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def edit
+  def update
   end
 
   def destroy
