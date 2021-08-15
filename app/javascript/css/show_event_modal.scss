@@ -1,0 +1,56 @@
+@mixin content{
+    font-size:14px;
+    display:inline-block;
+    vertical-align:middle; /* 縦位置中央揃え */
+    letter-spacing:0em;
+ }
+
+ @mixin center{
+    text-align:center;
+ }
+
+
+.start-list {
+    @include center; /* 中央揃え */
+    letter-spacing:7em;
+}
+
+.start-content {
+    @include content;
+}
+
+.end-list {
+    @include center; /* 中央揃え */
+    letter-spacing:8em;
+}
+
+.end-content {
+    @include content;
+}
+
+.crew-list{
+    @include center; /* 中央揃え */
+    letter-spacing:15em;
+}
+
+.crew-content {
+    @include content;
+}
+
+.rule-list{
+    @include center; /* 中央揃え */
+    letter-spacing:15em;
+}
+
+.rule-content {
+    @include content;
+}
+
+.message-list{
+    @include center;/* 中央揃え */
+    letter-spacing:14em;
+}
+
+.message-content{
+    @include content;
+}

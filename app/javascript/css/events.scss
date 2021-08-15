@@ -93,3 +93,22 @@
 .create-event-button-text:hover{
   color: red;
 }
+
+
+.delete-event-button-text{
+  color: rgb(243, 19, 19);
+  text-decoration: none;
+  border: 2px solid;
+  border-radius: 6px;
+  text-decoration: none;
+  padding: 6px 45px;
+}
+.delete-event-button-text:hover{
+  color: rgb(151, 5, 5);
+}
+
+
+// アバターの配置
+.event_user_avater_name{
+  font-size: 13px;
+}
