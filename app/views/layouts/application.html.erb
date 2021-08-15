@@ -18,6 +18,9 @@
 
 <body>
   <%= render "layouts/header" %>
+  <% if flash.any? %>
+    <%= render "shared/flash_message" %>
+  <% end %>
   <%= yield %>
   <%= render "layouts/footer" %>
 </body>
