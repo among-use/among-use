@@ -30,6 +30,7 @@ class User < ApplicationRecord
     end
   end
 
+
   def participant(event)
     participant_events << event
   end
@@ -44,5 +45,9 @@ class User < ApplicationRecord
 
   def own?(object)
     id == object.user_id
+
+  def user_profile
+    @user_profile = User.new
+    @user_profile.build_profile
   end
 end

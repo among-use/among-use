@@ -14,7 +14,7 @@
           <% end %>
         </div>
         <%= link_to "Back", root_path, class: 'btn btn-dark btn-lg my-3 border-white' %>
-        <% if current_user.present? && current_user.id == @user.profile.id %>
+        <% if logged_in? && current_user.id == @user.id %>
           <%= link_to "Edit", edit_user_path(current_user.id), class: 'btn btn-dark btn-lg my-3 border-white' %>
         <% end %>
       </div>
@@ -24,11 +24,17 @@
             <%= @user.name %>
           </p>
         <p class="text-danger">message</p>
+        <% if @user.profile.present? %>
           <%= simple_format(@user.profile.message, class: "mb-5") %>
+          <% else %>
+          <p>よろしくお願いします。</p>
+        <% end %>
         <p class="text-danger">mattermost_times_url</p>
           <p class="mb-5">
-            <%= @user.profile.mattermost_times_url %>
-          </p>
+          <% if @user.profile.present? %>
+              <%= @user.profile.mattermost_times_url %>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
