@@ -235,10 +235,7 @@ PLATFORMS
   arm64-darwin-20
   x86_64-darwin-19
   x86_64-darwin-20
-<<<<<<< HEAD
-=======
   x86_64-linux
->>>>>>> ccb74573e7aa2537f9d84050f4678717277ee16c
 
 DEPENDENCIES
   better_errors
