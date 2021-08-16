@@ -82,7 +82,7 @@ RSpec.describe 'Users', type: :system do
       # end
 
       context 'メッセージが未入力' do
-        fit 'ユーザーの編集が失敗する' do
+        it 'ユーザーの編集が失敗する' do
           visit edit_user_path(user)
           fill_in 'Name', with: 'hoge'
           fill_in 'Message', with: ''
