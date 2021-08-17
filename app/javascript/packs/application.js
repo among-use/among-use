@@ -11,6 +11,7 @@ import "bootstrap"
 import "../css/application"
 import '@fortawesome/fontawesome-free/js/all'
 require('jquery')
+// require ('../packs/calendar/event')
 
 const images = require.context("../images", true);
 const imagePath = name => images(name, true);

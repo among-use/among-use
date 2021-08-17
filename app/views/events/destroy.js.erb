@@ -1,0 +1,10 @@
+console.log('destroy.js.erb')
+
+
+
+$('.modal-window1, .overlay').fadeOut(function(){
+    $('[name="rule"] option[value=""]').prop('selected',true);
+    $("input[type=number], number_field").val("");
+    $("input[type=datetime-local], datetime_field").val("");
+    $("input[type=text], text_field").val("");
+});

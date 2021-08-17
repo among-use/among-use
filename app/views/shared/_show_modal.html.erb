@@ -2,7 +2,8 @@
   <div class="d-flex justify-content-end mt-1">
     <button class="btn btn-dark btn-lg border-white d-flex justify-content-end js-close button-close"><i class="fas fa-times"></i></button>
   </div>
-  <div class="modal-font-size mt-1">
+
+  <div class="modal-font-size mt-1" id='event-content'>
     <div class="text-center inline_block_list mb-4">
       <ul class="start-list">
         <li class="start-content">START DATE</li>
@@ -45,7 +46,7 @@
       <% if current_user == event.user %>
         <div class="row">
           <div class='col-6 mt-4 text-center'> <%= link_to 'Edit',edit_event_path,class:'create-event-button-text',remote: true %> </div>
-          <div class='col-6 mt-4 text-center'> <%= link_to 'Delete','#',class:'delete-event-button-text',remote: true %> </div>
+          <div class='col-6 mt-4 text-center'> <%= link_to 'Delete',event_path,method: :delete,class:'delete-event-button-text clender-reload',remote: true %> </div>
         </div>
       <% else %>
         <% if current_user.participant?(event) %>
@@ -58,4 +59,5 @@
   </div>
 </div>
 
+<%= javascript_pack_tag 'calendar/event' %>
 <%= javascript_pack_tag 'modal/modal_window' %>
