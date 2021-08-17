@@ -4,6 +4,7 @@ $(function () {
     });
 
     $('.js-close').click(function () {
+        console.log("モーダル削除");
         $('#overlay, .modal-window, .modal-window1').fadeOut(function(){
             $('[name="rule"] option[value=""]').prop('selected',true);
             $("input[type=number], number_field").val("");

@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   root 'top#index'
 
   resources :users
-  resources :events,only: %i[index create destroy edit new update show]
-  resources :participants,only: [:index, :create, :destroy]
   resources :profiles, only: %i[new]
+  resources :events,only: %i[index create destroy edit new update show] do
+    member do
+      resources :participants, only: [:index, :create, :destroy]
+    end
+  end
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

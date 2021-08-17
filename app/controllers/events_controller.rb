@@ -19,8 +19,9 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     if @event.save
+      current_user.participant(@event)
       respond_to do |format|
-        format.html { redirect_to root_path } 
+        format.html { redirect_to root_path }
         format.js
       end
     end
@@ -31,7 +32,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to root_path } 
       format.js
-    end 
+    end
   end
 
   def update

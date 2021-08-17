@@ -1,61 +1,58 @@
+@mixin content{
+    font-size:14px;
+    display:inline-block;
+    vertical-align:middle; /* 縦位置中央揃え */
+    letter-spacing:0em;
+ }
+
+ @mixin center{
+    text-align:center;
+ }
+
+
 .start-list {
-    text-align:center; /* 中央揃え */
+    @include center; /* 中央揃え */
     letter-spacing:7em;
 }
 
 .start-content {
-    font-size:14px;
-    display:inline-block;
-    vertical-align:middle; /* 縦位置中央揃え */
-    letter-spacing:0em;
+    @include content;
 }
 
 .end-list {
-    text-align:center; /* 中央揃え */
+    @include center; /* 中央揃え */
     letter-spacing:8em;
 }
 
 .end-content {
-    font-size:14px;
-    display:inline-block;
-    vertical-align:middle; /* 縦位置中央揃え */
-    letter-spacing:0em;
+    @include content;
 }
 
 .crew-list{
-    text-align:center; /* 中央揃え */
+    @include center; /* 中央揃え */
     letter-spacing:15em;
 }
 
 .crew-content {
-    font-size:14px;
-    display:inline-block;
-    vertical-align:middle; /* 縦位置中央揃え */
-    letter-spacing:0em;
+    @include content;
 }
 
 .rule-list{
-    text-align:center; /* 中央揃え */
+    @include center; /* 中央揃え */
     letter-spacing:15em;
 }
 
 .rule-content {
-    font-size:14px;
-    display:inline-block;
-    vertical-align:middle; /* 縦位置中央揃え */
-    letter-spacing:0em;
+    @include content;
 }
 
 .message-list{
-    text-align:center; /* 中央揃え */
+    @include center;/* 中央揃え */
     letter-spacing:14em;
 }
 
 .message-content{
-    font-size:14px;
-    display:inline-block;
-    vertical-align:middle; /* 縦位置中央揃え */
-    letter-spacing:0em;
+    @include content;
 }
 
 // Editボタン
