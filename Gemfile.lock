@@ -229,12 +229,9 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
-<<<<<<< HEAD
   x86_64-darwin-19
   x86_64-darwin-20
   x86_64-linux
-=======
->>>>>>> f96731f413302ff7183a05a4620973c284121b8b
 
 DEPENDENCIES
   better_errors
