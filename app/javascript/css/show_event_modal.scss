@@ -54,3 +54,17 @@
 .message-content{
     @include content;
 }
+
+// Editボタン
+.Edit-event-button-text{
+    color: white;
+    text-decoration: none;
+    border: 2px solid;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    padding: 6px 45px;
+}
+.Edit-event-button-text:hover{
+color: red;
+}
