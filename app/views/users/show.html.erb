@@ -32,7 +32,7 @@
         <p class="text-danger">mattermost_times_url</p>
           <p class="mb-5">
           <% if @user.profile.present? %>
-              <%= @user.profile.mattermost_times_url %>
+              <%= link_to "#{@user.name}さんのマタモ", @user.profile.mattermost_times_url %>
           <% end %>
         </p>
       </div>
