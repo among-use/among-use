@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_one  :profile, dependent: :destroy
   has_many :events, through: :participants
   has_many :participants
-# has_many :participant_events, through: :participants, source: :event
+  has_many :participant_events, through: :participants, source: :event
   has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications
 
@@ -28,6 +28,23 @@ class User < ApplicationRecord
       # self.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'avatar.png')), filename: 'avatar.png', content_type: 'image/png')
       self.avatar.attach(io: File.open(Rails.root.join('app', 'javascript', 'images', "#{file_name}.png")), filename: 'avatar.png', content_type: 'image/jpg')
     end
+  end
+
+
+  def participant(event)
+    participant_events << event
+  end
+
+  def unparticipant(event)
+    participant_events.delete(event)
+  end
+
+  def participant?(event)
+    participant_events.include?(event)
+  end
+
+  def own?(object)
+    id == object.user_id
   end
 
   def user_profile

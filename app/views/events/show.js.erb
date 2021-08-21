@@ -1,0 +1,3 @@
+console.log('モーダルの表示テスト')
+$('.overlay').fadeIn();
+$(".event-show-modal").append("<%= j(render 'shared/show_modal', { event: @event }) %>");

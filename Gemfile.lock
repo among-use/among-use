@@ -199,6 +199,16 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
+    sentry-rails (4.6.5)
+      railties (>= 5.0)
+      sentry-ruby-core (~> 4.6.0)
+    sentry-ruby (4.6.5)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      faraday (>= 1.0)
+      sentry-ruby-core (= 4.6.5)
+    sentry-ruby-core (4.6.5)
+      concurrent-ruby
+      faraday
     sorcery (0.16.1)
       bcrypt (~> 3.1)
       oauth (~> 0.5, >= 0.5.5)
@@ -255,6 +265,8 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.2, >= 6.1.2.1)
   sass-rails (>= 6)
+  sentry-rails
+  sentry-ruby
   sorcery
   spring
   tzinfo-data
