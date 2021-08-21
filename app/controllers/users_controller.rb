@@ -12,8 +12,11 @@ class UsersController < ApplicationController
     # debugger
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path # 後でリダイレクト先を変更
+      auto_login(@user)
+      flash[:success] = 'ユーザー登録に成功しました。'
+      redirect_to root_path
     else
+      flash.now[:danger] = 'ユーザー登録に失敗しました。'
       render :new
     end
   end

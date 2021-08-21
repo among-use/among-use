@@ -3,11 +3,7 @@ class UserForm
 
   attr_accessor :name, :message, :mattermost_times_url, :id, :image
 
-  with_options presence: true do
-    # validates :name
-    validates :message, length: { maximum: 100 }
-    # validates :mattermost_times_url
-  end
+  validates :message, length: { maximum: 100 }
 
   def update
     return false if invalid?
@@ -18,10 +14,10 @@ class UserForm
       user.avatar.attach(image) if image.present?
       profile = Profile.find_by(user_id: user.id)
       if profile.present?
-      profile.update!(message: message, mattermost_times_url: mattermost_times_url)
+        profile.update!(message: message, mattermost_times_url: mattermost_times_url)
       else
-      profile = user.build_profile(message: message, mattermost_times_url: mattermost_times_url)
-      profile.save!
+        profile = user.build_profile(message: message, mattermost_times_url: mattermost_times_url)
+        profile.save!
       end
     end
 

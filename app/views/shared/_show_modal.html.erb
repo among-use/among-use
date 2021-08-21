@@ -7,11 +7,11 @@
     <div class="text-center inline_block_list mb-4">
       <ul class="start-list">
         <li class="start-content">START DATE</li>
-        <li class="start-content"><%= event.start_datetime %></li>
+        <li class="start-content"><%= event.start_datetime.strftime('%Y/%m/%d %H:%M') %></li>
       </ul>
       <ul class="end-list">
         <li class="end-content">END DATE</li>
-        <li class="end-content"><%= event.finish_datetime %></li>
+        <li class="end-content"><%= event.finish_datetime.strftime('%Y/%m/%d %H:%M') %></li>
       </ul>
       <ul class="crew-list">
         <li class="crew-content">MAX CREWS</li>
