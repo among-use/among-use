@@ -7,12 +7,16 @@
         <%= image_tag user.avatar, size: "100x150" %>
       <% else %>
         <%= image_pack_tag "300x300.png", class: "rounded-circle", size: "200x200" %>
-      <% end %>      
+      <% end %>
     </div>
-    <%= user.name %><br>
-    <div class="text-overflow">
-      <%= user.profile.message.truncate(20) %>
+    <div class="text-warning">
+      <%= user.name %>
     </div>
+    <% if user.profile.present? && user.profile.message.present? %>
+      <div class="text-overflow">
+        <%= user.profile.message.truncate(20) %>
+      </div>
+    <% end %>
   <% end %>
   </div>
 </div>
