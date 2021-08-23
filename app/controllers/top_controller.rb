@@ -1,6 +1,8 @@
 class TopController < ApplicationController
 
-  def index; end
+  def index
+    @events = Event.all.order(start_datetime: :asc).feature_event.limit(5)
+  end
 
   def terms; end
 

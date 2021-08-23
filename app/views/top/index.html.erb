@@ -9,15 +9,12 @@
   </div>
   <div class="swiper-container border border-white p-3 m-3 d-inline-block">
     <div class="swiper-wrapper">
-      <div class="text-danger swiper-slide">
-        NEXT EVENT 7月12日
-      </div>
-      <div class="swiper-slide">
-        RANKING 現在のkill率1位はいずみんです！
-      </div>
-      <div class="swiper-slide">
-        RANKING 現在のkill率1位はいずみんです！
-      </div>
+      <% @events.each do |event| %>
+        <div class="text-danger swiper-slide">
+          <%= event.start_datetime.strftime('%Y/%m/%d %H:%M') %><br><br>
+          <%= event.message %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div>
