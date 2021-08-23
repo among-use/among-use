@@ -1,25 +1,35 @@
 <div class="container text-white text-center">
-  <div class="top-title amongus-font">
+  <div class="top-title amongus-font mb-5">
     @E
   </div>
   <div>
-    <div class="border-bottom border-white d-inline-block">
+    <div class="border-bottom border-white d-inline-block h3">
       information
     </div>
   </div>
-  <div class="swiper-container border border-white p-3 m-3 d-inline-block">
+  <div class="swiper-container border border-white p-3 m-3 d-inline-block mb-5 rounded">
     <div class="swiper-wrapper">
-      <% @events.each do |event| %>
+      <% @events.each_with_index do |event, i| %>
         <div class="text-danger swiper-slide">
-          <%= event.start_datetime.strftime('%Y/%m/%d %H:%M') %><br><br>
-          <%= event.message %>
+          <% if i == 0 %>
+            <p class="text-warning">
+              NEXT  EVENT
+              <%= event.start_datetime.strftime('%Y/%m/%d %H:%M') %><br><br>
+              <%= event.message %>
+            </p>
+          <% else %>
+            <%= event.start_datetime.strftime('%Y/%m/%d %H:%M') %><br><br>
+            <%= event.message %>
+          <% end %>
         </div>
       <% end %>
     </div>
   </div>
   <div>
-    <%=  link_to "EVENT", events_path, class: "btn btn-dark border-white btn-lg amongus-font" %>
+    <%=  link_to "EVENT", events_path, class: "btn btn-dark border-white btn-lg amongus-font event-btn px-5" %>
   </div>
+  <%= image_pack_tag "red_pum.png", size:"400x500", class:"top-character-left" %>
+  <%= image_pack_tag "lightgreen_plant.png", size:"350x450", class:"top-character-right" %>
 </div>
 
 <%= javascript_pack_tag "swiper" %>
