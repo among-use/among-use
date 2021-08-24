@@ -10,4 +10,6 @@ class Event < ApplicationRecord
   validates :max_crews, presence: true, numericality: {only_integer: true, less_than_or_equal_to: 15} # クルーの最大人数は15人まで
   
   enum rule: { normal: 0, catch: 1, hide: 2 } #ルール属性、初期値はnoraml
+
+  scope :feature_event, -> { where("start_datetime > ?", Time.now()) }
 end
