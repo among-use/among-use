@@ -7,6 +7,16 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8E0DH1JYWW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8E0DH1JYWW');
+  </script>
+
   <%= stylesheet_pack_tag 'application', media: 'all' %>
   <%= javascript_pack_tag 'application' %>
 
@@ -18,6 +28,9 @@
 
 <body>
   <%= render "layouts/header" %>
+  <% if flash.any? %>
+    <%= render "shared/flash_message" %>
+  <% end %>
   <%= yield %>
   <%= render "layouts/footer" %>
 </body>

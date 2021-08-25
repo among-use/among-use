@@ -12,8 +12,11 @@ class UsersController < ApplicationController
     # debugger
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path # 後でリダイレクト先を変更
+      auto_login(@user)
+      flash[:success] = 'ユーザー登録に成功しました。'
+      redirect_to root_path
     else
+      flash.now[:danger] = 'ユーザー登録に失敗しました。'
       render :new
     end
   end
@@ -31,7 +34,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    # binding.pry
     @user_form = UserForm.new(update_params)
     if @user_form.valid?
 
@@ -54,7 +56,7 @@ class UsersController < ApplicationController
   end
 
   def update_params
-    params.require(:user_form).permit(:name, :message, :mattermost_times_url, :id)
+    params.require(:user_form).permit(:name, :message, :mattermost_times_url, :id, :image)
   end
 end
 

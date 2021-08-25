@@ -1,8 +1,12 @@
 <div id='calendar'></div>
 
-<%= render 'shared/modal' %>
+<%= render 'shared/modal', event: @event %>
 
 <%= javascript_pack_tag 'calendar/event' %>
 <%= javascript_pack_tag 'modal/modal_window' %>
 
-<div class='mt-4 text-center create-event-button'> <%= link_to 'New','#',class:'create-event-button-text' %> </div>
+<% if logged_in? %>
+  <div class='mt-4 text-center create-event-button'>
+    <%= link_to 'New','#',class:'create-event-button-text' %>
+  </div>
+<% end %>

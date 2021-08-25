@@ -45,6 +45,7 @@ class User < ApplicationRecord
 
   def own?(object)
     id == object.user_id
+  end
 
   def user_profile
     @user_profile = User.new

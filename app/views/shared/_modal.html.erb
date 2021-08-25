@@ -9,30 +9,6 @@
       <button class="btn btn-dark btn-lg border-white d-flex justify-content-end js-close button-close"><i class="fas fa-times"></i></button>
     </div>
     <div class="text-center title mb-1">EventCreate</div>
-    <%= form_with url: events_path, local: false do |f| %>
-      <div class="form-group">
-        <%= f.label :rule, class: 'form-label' %>
-        <%= f.select :rule, options_for_select(Event.rules), {prompt: "選択してください"}, class: "form-control" %>
-      </div>
-      <div class="form-group mt-3">
-        <%= f.label :max_crews, class: 'form-label' %>
-        <%= f.number_field :max_crews, min: 5, max: 15, class: "form-control" %>
-      </div>
-      <div class="form-group mt-3">
-        <%= f.label :start_datetime, class: 'form-label' %>
-        <%=  f.datetime_field :start_datetime, class: "form-control" %>
-      </div>
-      <div class="form-group mt-3">
-        <%= f.label :finish_datetime, class: 'form-label' %>
-        <%=  f.datetime_field :finish_datetime, class: "form-control" %>
-      </div>
-      <div class="form-group mt-3">
-        <%= f.label :MESSAGE, class: 'form-label' %>
-        <%= f.text_field :message, class:"form-control" %>
-      </div>
-      <div class="d-flex justify-content-center mt-2">
-        <%= f.submit "Submit", class: 'btn btn-dark btn-lg my-3 border-white clender-reload' %>
-      </div>
-    <% end %>
+    <%= render 'shared/event_form' %>
   </div>
 
