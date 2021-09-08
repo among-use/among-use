@@ -42,20 +42,22 @@
         </div>
       </div>
     </div>
-    <div class="text-center">
-      <% if current_user == event.user %>
-        <div class="row">
-          <div class='col-6 mt-4 text-center'> <%= link_to 'Edit',edit_event_path,class:'create-event-button-text',remote: true %> </div>
-          <div class='col-6 mt-4 text-center'> <%= link_to 'Delete',event_path,method: :delete,class:'delete-event-button-text clender-reload',remote: true %> </div>
-        </div>
-      <% else %>
-        <% if current_user.participant?(event) %>
-          <%= link_to "Leave", participant_path(event.id), remote: true, method: :delete, class: "mt-2 btn btn-dark btn-lg my-3 border-white clender-reload delete-event-button-text" %>
+    <% if logged_in? %>
+      <div class="text-center">
+        <% if current_user == event.user %>
+          <div class="row">
+            <div class='col-6 mt-4 text-center'> <%= link_to 'Edit',edit_event_path,class:'create-event-button-text',remote: true %> </div>
+            <div class='col-6 mt-4 text-center'> <%= link_to 'Delete',event_path,method: :delete,class:'delete-event-button-text clender-reload',remote: true %> </div>
+          </div>
         <% else %>
-          <%= link_to "Join", participants_path(event.id), remote: true, method: :post, class: "mt-2 btn btn-dark btn-lg my-3 border-white clender-reload create-event-button-text" %>
+          <% if current_user.participant?(event) %>
+            <%= link_to "Leave", participant_path(event.id), remote: true, method: :delete, class: "mt-2 btn btn-dark btn-lg my-3 border-white clender-reload delete-event-button-text" %>
+          <% else %>
+            <%= link_to "Join", participants_path(event.id), remote: true, method: :post, class: "mt-2 btn btn-dark btn-lg my-3 border-white clender-reload create-event-button-text" %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
