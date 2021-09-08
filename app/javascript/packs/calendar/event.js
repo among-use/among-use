@@ -1,4 +1,3 @@
-console.log('カレンダーの読み込み')
 //インストールしたファイルたちを呼び出します。
 import { Calendar} from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
@@ -38,7 +37,6 @@ var calendar = new Calendar(calendarEl, {
     },
     eventClick: function(info){
         var event_id = info.event.id;
-        console.log(event_id);
         $.ajax({
           // type: 'post',
           url: "/events/"+ event_id,
@@ -46,10 +44,8 @@ var calendar = new Calendar(calendarEl, {
             event_id: event_id
             },
           success: function(data) {
-            console.log("イベントが登録されていません" + " ID:" + event_id);
           },
           error: function() {
-            console.log("イベントが登録されていません" + " ID:" + event_id);
           }
         });
       // $('.event-max-crews').html('MAX CREWS : '+ info.event.extendedProps.crews);
@@ -68,9 +64,7 @@ calendar.render();
 
 //イベント作成のsubmitが押された0.1秒後に発火。カレンダーの再レンダリング
 $(".clender-reload").on('click',function(){
-  console.log('作成後再レンダリング1')
   setTimeout(function(){
-    console.log('作成後再レンダリング2')
     calendar.refetchEvents();
   },500);
 
@@ -81,7 +75,6 @@ $(".clender-reload").on('click',function(){
 
 // $(".clender-reload-edit").on('click',function(){
 //   setTimeout(function(){
-//     console.log('更新後再レンダリング')
 //     calendar.refetchEvents();
 //   },2000);
 // });
