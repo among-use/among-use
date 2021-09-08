@@ -5,3 +5,27 @@
 .top-title {
   font-size: 6rem;
 }
+
+.event-btn {
+  font-size: 3rem;
+}
+
+.top-character-left {
+  position: fixed;
+  left: -10%;
+  bottom: -10%;
+  transform: rotate(30deg);
+  z-index: 10;
+}
+
+.top-character-right {
+  position: fixed;
+  left: 0%;
+  bottom: -15%;
+  transform: rotate(20deg);
+}
+
+// .container {
+//   position: relative;
+//   overflow: visible;
+// }
