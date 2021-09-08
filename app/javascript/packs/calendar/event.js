@@ -1,8 +1,8 @@
 //インストールしたファイルたちを呼び出します。
 import { Calendar} from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
-import monthGridPlugin from '@fullcalendar/daygrid'
-import googleCalendarApi from '@fullcalendar/google-calendar'
+import monthGridPlugin from '@fullcalendar/daygrid';
+import googleCalendarApi from '@fullcalendar/google-calendar';
 
 //<div id='calendar'></div>のidからオブジェクトを定義してカレンダーを作っていきます。
 var calendarEl = document.getElementById('calendar');
