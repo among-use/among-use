@@ -4,11 +4,6 @@ $(function () {
     });
 
     $('.js-close').click(function () {
-<<<<<<< HEAD
-
-        console.log("モーダル削除");
-=======
->>>>>>> 491dc79e2ab3187c70cc22f11e22cb01776fb2a5
         $('#overlay, .modal-window, .modal-window1').fadeOut(function(){
             $('[name="rule"] option[value=""]').prop('selected',true);
             $("input[type=number], number_field").val("");
